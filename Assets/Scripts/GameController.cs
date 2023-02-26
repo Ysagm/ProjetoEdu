@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,32 +6,16 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    // List with all the words
-    private List<string> dictionary = new List<string>();
-
-    // List with words that can be chosen as correct words
-    public List<string> guessingWords = new List<string>();
-
-    public string correctWord;
-
-    // All wordboxes
-    public List<Transform> wordBoxes = new List<Transform>();
-
-    // Current wordbox that we're inputting in
-    private int currentWordBox;
-
-    // The current row that we're currently at
-    public int currentRow;
-
-    // How many characters are there per row
-    private int charactersPerRowCount = 5;
-
-    private int amountOfRows = 5;
-
     // Our different colors that we will use
     private Color colorCorrect = new Color(0.3254902f, 0.5529412f, 0.3058824f);
     private Color colorIncorrectPlace = new Color(0.7098039f, 0.6235294f, 0.2313726f);
     private Color colorUnused = new Color(0.2039216f, 0.2039216f, 0.2f);
+
+    // List of starting x positions for the wordboxes
+    private float[] wordRowStartIngXPositions = new float[5];
+
+    // Reference to grid layout group
+    public GridLayoutGroup gridLayoutGroup;
 
     // The sprite that will be used when a box "cleared"
     public Sprite clearedWordBoxSprite;
@@ -47,11 +30,29 @@ public class GameController : MonoBehaviour
     // Curve for animating the wordboxes
     public AnimationCurve wordBoxInteractionCurve;
 
-    // List of starting x positions for the wordboxes
-    private float[] wordRowStartIngXPositions = new float[5];
+    // Current wordbox that we're inputting in
+    private int currentWordBox;
 
-    // Reference to grid layout group
-    public GridLayoutGroup gridLayoutGroup;
+    // The current row that we're currently at
+    private int currentRow;
+
+    // Amount of rows of wordboxes
+    private int amountOfRows = 5;
+
+    // How many characters are there per row
+    private int charactersPerRowCount = 5;
+
+
+    public string correctWord;
+
+    // All wordboxes
+    public List<Transform> wordBoxes = new List<Transform>();
+
+    // List with all the words
+    private List<string> dictionary = new List<string>();
+
+    // List with words that can be chosen as correct words
+    private List<string> guessingWords = new List<string>();
 
     // Start is called before the first frame update
     void Start()
@@ -323,8 +324,8 @@ public class GameController : MonoBehaviour
                 // Value will go from 0 to 1
                 float value = timer / duration;
 
-                // Interpolate linearly from a scale of (1, 1, 1) to a scale of (1, 0, 1)
-                currentWordboxImage.transform.localScale = Vector3.Lerp(Vector3.one, new Vector3(1, 0, 1), value);
+                // Interpolate linearly from a scale of (1, 1, 1) to a scale of (0, 0, 0)
+                currentWordboxImage.transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, value);
 
                 // Increase timer
                 timer += Time.deltaTime;
@@ -350,7 +351,7 @@ public class GameController : MonoBehaviour
                 float value = timer / duration;
 
                 // Interpolate linearly from a scale of (0, 0, 0) to a scale of (1, 1, 1)
-                currentWordboxImage.transform.localScale = Vector3.Lerp(new Vector3(1, 0, 1), Vector3.one, value);
+                currentWordboxImage.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, value);
 
                 // Increase timer
                 timer += Time.deltaTime;
@@ -383,33 +384,33 @@ public class GameController : MonoBehaviour
                 keyboardImage.color = newColor;
             }
 
-            // If the guess was correct, output that the player has won into the console
-            if (guess == correctWord)
-            {
-                // Let the player know that they won!
-                // And show what score they got
-                // This popup stays forever as well
-                ShowPopup("You win!\nYour score is: ", 0f, true);
+        }
 
-            }
-            else
-            {
-                // If the guess was incorrect, go to the next row
-                Debug.Log("Wrong, guess again!");
-                // Restart at the leftmost character
-                currentWordBox = 0;
-                currentRow++;
-            }
+        // If the guess was correct, output that the player has won into the console
+        if (guess == correctWord)
+        {
+            // Let the player know that they won!
+            // And show what score they got
+            // This popup stays forever as well
+            ShowPopup("You win!\nYour score is: ", 0f, true);
 
-            if (currentRow > amountOfRows)
-            {
-                Debug.Log("No more rows available");
-                // Let the player know that they lost,
-                // and what the correct word was,
-                // this popup does not disappear
-                ShowPopup("You Lost!\n" + "Correct word was:" + correctWord, 0f, true);
-            }
+        }
+        else
+        {
+            // If the guess was incorrect, go to the next row
+            Debug.Log("Wrong, guess again!");
+            // Restart at the leftmost character
+            currentWordBox = 0;
+            currentRow++;
+        }
 
+        if (currentRow > amountOfRows)
+        {
+            Debug.Log("No more rows available");
+            // Let the player know that they lost,
+            // and what the correct word was,
+            // this popup does not disappear
+            ShowPopup("You Lost!\n" + "Correct word was:" + correctWord, 0f, true);
         }
     }
 
@@ -503,9 +504,10 @@ public class GameController : MonoBehaviour
         List<Vector3> wordRowStartIngPositions = new List<Vector3>();
         for (int i = 0; i < 5; i++)
         {
+            // Reference to wordBox
             Vector3 currentWordBoxLocalPosition = wordBoxes[i + (currentRow * 5)].localPosition;
             // Every wordbox in the same column share the same X value
-            // So all 5 wordboxes per row will have the same x-starting values as the 5 wordeboxes above
+            // So all 5 wordboxes per row will have the same x-starting values as the 5 word boxes above
             wordRowStartIngPositions.Add(new Vector3(wordRowStartIngXPositions[i], currentWordBoxLocalPosition.y, currentWordBoxLocalPosition.z));
         }
 
