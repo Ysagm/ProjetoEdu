@@ -82,6 +82,13 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Restarted scene");
+
+    }
+
     void AddWordsToList(string path, List<string> listOfWords)
     {
         // Read the text from the file
@@ -392,7 +399,7 @@ public class GameController : MonoBehaviour
             // Let the player know that they won!
             // And show what score they got
             // This popup stays forever as well
-            ShowPopup("You win!\nYour score is: ", 0f, true);
+            ShowPopup("You win!", 0f, true);
 
         }
         else
