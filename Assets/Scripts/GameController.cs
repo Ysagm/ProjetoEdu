@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     // Our different colors that we will use
     private Color colorCorrect = new Color(0.3254902f, 0.5529412f, 0.3058824f);
     private Color colorIncorrectPlace = new Color(0.7098039f, 0.6235294f, 0.2313726f);
-    private Color colorUnused = new Color(0.2039216f, 0.2039216f, 0.2f);
+    private Color colorUnused = new Color(0.4697401f, 0.490566f, 0.4817039f);
 
     // List of starting x positions for the wordboxes
     private float[] wordRowStartIngXPositions = new float[5];
