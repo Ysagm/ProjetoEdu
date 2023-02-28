@@ -29,6 +29,8 @@ public class GameController : MonoBehaviour
 
     private Coroutine popupRoutine;
 
+    public Button popupButton;
+
     // Curve for animating the wordboxes
     public AnimationCurve wordBoxInteractionCurve;
 
@@ -190,6 +192,7 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("Answer too short, must be 5 letters");
 
+            popupButton.gameObject.SetActive(false);
             // Let the player know that the submitted word is too short
             ShowPopup("Answer too short, must be 5 letters", 2f, false);
 
@@ -228,6 +231,7 @@ public class GameController : MonoBehaviour
             // Let the player know that the submitted word is too short
             ShowPopup("Word does not exist in dictionary!", 2f, false);
 
+            popupButton.gameObject.SetActive(false);
             // Wiggle word row
             StartCoroutine(AnimateWordRow());
             return;
@@ -399,6 +403,7 @@ public class GameController : MonoBehaviour
             // And show what score they got
             // This popup stays forever as well
             ShowPopup("You win!", 0f, true);
+            popupButton.gameObject.SetActive(true);
 
         }
         else
@@ -416,6 +421,7 @@ public class GameController : MonoBehaviour
             // Let the player know that they lost, and what the correct word was
             // this popup does not disappear
             ShowPopup("You Lost!\n" + "Correct word was:" + correctWord, 0f, true);
+            popupButton.gameObject.SetActive(true);
         }
     }
 
@@ -553,7 +559,7 @@ public class GameController : MonoBehaviour
 
             yield return null;
         }
-        
+
         // Reset the positions to the starting positions
         for (int i = 0; i < 5; i++)
         {
