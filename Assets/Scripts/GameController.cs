@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     // Reference to the player controller script
     public PlayerController playerController;
 
+    //Control popup
     public GameObject popup;
 
     private Coroutine popupRoutine;
@@ -42,7 +43,6 @@ public class GameController : MonoBehaviour
 
     // How many characters are there per row
     private int charactersPerRowCount = 5;
-
 
     public string correctWord;
 
@@ -152,8 +152,7 @@ public class GameController : MonoBehaviour
 
         int currentlySelectedWordbox = (currentRow * charactersPerRowCount) + currentWordBox;
 
-        // If the text in the current wordbox is empty, go back a step and clear the one
-        // that comes after
+        // If the text in the current wordbox is empty, go back a step and clear the one that comes after
         if (wordBoxes[currentlySelectedWordbox].GetChild(0).GetComponent<Text>().text == "")
         {
             if (currentlySelectedWordbox > ((currentRow * charactersPerRowCount)))
@@ -370,7 +369,6 @@ public class GameController : MonoBehaviour
             currentWordboxImage.transform.localScale = Vector3.one;
 
             // Set the color of the keyboard character to the "new color", only if it's "better" than the previous one
-
             // Saving a variable for the current keyboard image
             Image keyboardImage = playerController.GetKeyboardImage(guess[i].ToString());
 
@@ -415,8 +413,7 @@ public class GameController : MonoBehaviour
         if (currentRow > amountOfRows)
         {
             Debug.Log("No more rows available");
-            // Let the player know that they lost,
-            // and what the correct word was,
+            // Let the player know that they lost, and what the correct word was
             // this popup does not disappear
             ShowPopup("You Lost!\n" + "Correct word was:" + correctWord, 0f, true);
         }
@@ -540,8 +537,7 @@ public class GameController : MonoBehaviour
         // Run loop
         while (timer <= duration)
         {
-            // By using Cos we will get a value that goes from -1 to 1,
-            // we multiply this by wiggleSpeed to "wiggle" the box.
+            // By using Cos we will get a value that goes from -1 to 1, we multiply this by wiggleSpeed to "wiggle" the box.
             // We then let this value go towards 0 at the end of the duration.
             // This will wiggle the object and the amplitude of the wiggle will decrease until it hits 0 at the end of the duration
             wiggleX = Mathf.Lerp(Mathf.Cos(timer * wiggleSpeed) * wiggleRadius, 0f, timer / duration);
@@ -557,6 +553,7 @@ public class GameController : MonoBehaviour
 
             yield return null;
         }
+        
         // Reset the positions to the starting positions
         for (int i = 0; i < 5; i++)
         {
