@@ -8,9 +8,9 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     // Our different colors that we will use
-    private Color colorCorrect = new Color(0.3254902f, 0.5529412f, 0.3058824f);
-    private Color colorIncorrectPlace = new Color(0.7098039f, 0.6235294f, 0.2313726f);
-    private Color colorUnused = new Color(0.4697401f, 0.490566f, 0.4817039f);
+    private Color colorCorrect = new Color(0.6f, 0.8509804f, 0.5490196f);
+    private Color colorIncorrectPlace = new Color(1f, 0.8235294f, 0.4f);
+    private Color colorUnused = new Color(0.572549f, 0.572549f, 0.572549f);
 
     // List of starting x positions for the wordboxes
     private float[] wordRowStartIngXPositions = new float[5];
