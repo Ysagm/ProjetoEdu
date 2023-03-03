@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     // A list populated with the text components of the keyboard letters
     public List<Button> keyboardCharacterButtons = new List<Button>();
 
+    //List populated with sign language components instead od letters
+     public List<Button> keyboardLibras = new List<Button>();
+
     // All characters in the keyboard, named from top row to bottom row
     private string characterNames = "QWERTYUIOPASDFGHJKLZXCVBNM";
 
