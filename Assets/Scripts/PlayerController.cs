@@ -10,7 +10,13 @@ public class PlayerController : MonoBehaviour
     public List<Button> keyboardCharacterButtons = new List<Button>();
 
     //List populated with sign language components instead od letters
-     public List<Button> keyboardLibras = new List<Button>();
+    public List<Button> keyboardLibras = new List<Button>();
+
+    //Change button
+    public Button changeKeyboardButton;
+    public GameObject keyboard;
+    public GameObject keyboardForLibras;
+
 
     // All characters in the keyboard, named from top row to bottom row
     private string characterNames = "QWERTYUIOPASDFGHJKLZXCVBNM";
@@ -47,7 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         // Output to the console for now
         // We will later use this function to add the letters to the wordboxes.
-        Debug.Log(letter);
+        //Debug.Log(letter);
         gameController.AddLetterToWordBox(letter);
     }
 
@@ -64,9 +70,26 @@ public class PlayerController : MonoBehaviour
                 return keyboardLetter.transform.GetComponent<Image>();
             }
         }
-        Debug.Log("This letter does not exist on the current keyboard.");
+        //Debug.Log("This letter does not exist on the current keyboard.");
         return null;
 
+        
+    }
+
+    public void onClick() 
+    {
+        //Debug.Log("HERE");
+        if(keyboardForLibras.activeSelf != true)
+        {
+            keyboard.SetActive(false);
+            keyboardForLibras.SetActive(true);
+            Debug.Log("ATIVO");
+        }
+        else
+        {
+            keyboard.SetActive(true);
+            keyboardForLibras.SetActive(false);
+        }
         
     }
 
