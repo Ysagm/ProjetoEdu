@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
         {
             keyboard.SetActive(false);
             keyboardForLibras.SetActive(true);
-            Debug.Log("ATIVO");
+            //Debug.Log("ATIVO");
         }
         else
         {
