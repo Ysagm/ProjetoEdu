@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         SetupButtons();
+        SetupButtonsLibras();
     }
 
     void SetupButtons()
@@ -49,6 +50,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void SetupButtonsLibras()
+    {
+        // Starting from the top row, set the text of the keyboard-texts to the ones in the list
+        for (int i = 0; i < keyboardLibras.Count; i++)
+        {
+            // Here we use GetChild and then GetComponent, it's not the most efficient way performance wise.
+            // For setting things up and one shots it is usually fine, but doing it every frame inside of
+            // Update() for example is not good practice and might give you dips in performance. Just a tip!
+            keyboardLibras[i].transform.GetChild(0).GetComponent<Text>().text = characterNames[i].ToString();
+        }
+
+        // Whenever we click a button, run the function ClickCharacter and output the character to the Console.
+        foreach (var keyboardForLibras in keyboardLibras)
+        {
+            string letter = keyboardForLibras.transform.GetChild(0).GetComponent<Text>().text;
+            keyboardForLibras.GetComponent<Button>().onClick.AddListener(() => ClickCharacter(letter));
+        }
+    }
+
     void ClickCharacter(string letter)
     {
         // Output to the console for now
@@ -64,6 +84,14 @@ public class PlayerController : MonoBehaviour
 
         // Go through every key and return the one with the correct letter
         foreach (var keyboardLetter in keyboardCharacterButtons)
+        {
+            if (keyboardLetter.transform.GetChild(0).GetComponent<Text>().text == letter)
+            {
+                return keyboardLetter.transform.GetComponent<Image>();
+            }
+        }
+
+        foreach (var keyboardLetter in keyboardLibras)
         {
             if (keyboardLetter.transform.GetChild(0).GetComponent<Text>().text == letter)
             {
