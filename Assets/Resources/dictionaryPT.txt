@@ -32,7 +32,9 @@ ardis,letra,trago,manto,salmo,preco,burra,folia,monta,troco,alamo,matar,labia,ch
 venho,bolso,fazes,neste,barro,porca,retro,calor,punha,queda,axial,limpo,sabor,louro,calvo,farol,rente,lutar,macho,firma,mimar,salva,lousa,arroz,zumbi,calca,coevo,justa,enjoo,
 baixa,logia,sigla,torna,miope,veloz,bedel,solta,fugiu,chave,nacar,ousar,gueto,vazia,longo,reler,tumba,corar,forro,farto,fatuo,sofia,penca,sexto,lucro,vario,subir,cacto,mania,
 urgir,obtem,repor,sugar,custo,valer,louca,harem,quite,passe,puido,sadio,ultra,outra,nariz,staff,dados,cardo,versa,falsa,usual,corte,modal,hifen,lento,viger,socio,refil,diabo,
-ceifa,choca,ferir,garra,redea,nesga,xampu,disso,pagar,abade,patio,mouro,grife,aereo,
+ceifa,choca,ferir,garra,redea,nesga,xampu,disso,pagar,abade,patio,mouro,grife,aereo,gados,facas,junho,abril,julho,minas,gatos,homus,merda,unhas,menor,joias,tumor,durar,melao,
+piano,viola,jogos,novos,banco,beber,entra,anula,colar,botao,morno,anual,edita,carne,vamos,boiar,lombo,secar,volei,jantar,olhos,opera,valsa,envia,envio,julga,cloro,focar,conde,
+lorde,
 
 
 
