@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         // Populate the dictionary
-        AddWordsToList("Assets/Resources/dictionary.js", dictionary);
+        AddWordsToList("Assets/Resources/dictionaryPT.js", dictionary);
 
         // Populate the guessing words
         AddWordsToList("Assets/Resources/wordlist.js", guessingWords);
