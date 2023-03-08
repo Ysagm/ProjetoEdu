@@ -12,6 +12,7 @@ public class Loading : MonoBehaviour
 
     void Start()
     {
+
         loadingBarImage.fillAmount = 0;
         StartCoroutine(LoadAsynchrononously());
     }
