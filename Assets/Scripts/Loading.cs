@@ -20,7 +20,7 @@ public class Loading : MonoBehaviour
 
     IEnumerator LoadAsynchrononously()
     {
-        yield return new WaitForSecondsRealtime(3);
+        yield return new WaitForSecondsRealtime(5);
         AsyncOperation operation = SceneManager.LoadSceneAsync("Game");
 
         //operation.allowSceneActivation=false;
