@@ -17,11 +17,16 @@ public class AICat : MonoBehaviour
     //List of phrases
     public List<string> phrases;
 
+    //Sprites
+    public Image catImage;
+    public Sprite[] spriteArray;
+
     // Start is called before the first frame update
     void Start()
     {
         //StartCoroutine(StartPhrases());
         ShowFalas(" ",0f,false);
+        catImage.sprite = spriteArray[0]; 
     }
     void ShowFalas(string message, float duration, bool stayForever)
     {
@@ -107,10 +112,12 @@ public class AICat : MonoBehaviour
         // Turn on the popup gameobject FalaAI
         falasGato.SetActive(true);
         ShowFalas(GetRandomWord(), 0f, true);
+        
 
         // First we lerp the scale from 0 to 1
         while (timer <= duration)
         {
+            catImage.sprite = spriteArray[1];
             // This is just to make the variable value a bit cleaner
             float t = timer / duration;
 
@@ -132,6 +139,7 @@ public class AICat : MonoBehaviour
         if (hide)
         {
             falasGato.SetActive(false);
+            catImage.sprite = spriteArray[0];
         }
 
     }
