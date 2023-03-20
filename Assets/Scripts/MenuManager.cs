@@ -11,5 +11,10 @@ public class MenuManager : MonoBehaviour
     public void Play(){
         SceneManager.LoadScene(nameOfLevel);
     }  
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
 
