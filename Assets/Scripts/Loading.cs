@@ -21,7 +21,7 @@ public class Loading : MonoBehaviour
     IEnumerator LoadAsynchrononously()
     {
         yield return new WaitForSecondsRealtime(5);
-        AsyncOperation operation = SceneManager.LoadSceneAsync("Game");
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Menu");
 
         //operation.allowSceneActivation=false;
 
