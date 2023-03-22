@@ -14,8 +14,7 @@ public class DropdownSwitch : MonoBehaviour
     private void Start()
     {
         language.onValueChanged.AddListener(OnLanguageValueChanged);
-        linguinha = "Portugues";
-        language.text = language.options[index].text;
+        linguinha = language.options[index].text;
     }
 
     private void OnLanguageValueChanged(int i)
