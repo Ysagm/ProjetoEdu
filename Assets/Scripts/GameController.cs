@@ -4,7 +4,6 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using static DropdownSwitch;
 
 public class GameController : MonoBehaviour
 {
@@ -62,16 +61,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         // Populate the dictionary
-        if(DropdownSwitch.linguinha == "Portgues")
-        {
-            Debug.Log("Escolhimento:" + DropdownSwitch.linguinha);
-            AddWordsToList("Assets/Resources/dictionaryPT.js", dictionary);
-        }
-        else
-        {
-             Debug.Log("Escolhimento:" + DropdownSwitch.linguinha);
-            AddWordsToList("Assets/Resources/dictionary.js", dictionary);
-        }
+        AddWordsToList("Assets/Resources/dictionaryPT.js", dictionary);
 
         // Populate the guessing words
         AddWordsToList("Assets/Resources/wordlist.js", guessingWords);
