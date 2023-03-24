@@ -21,12 +21,24 @@ public class AICat : MonoBehaviour
     public Image catImage;
     public Sprite[] spriteArray;
 
+    public float time = 0f;
+    public float interpolationPeriod;
+
     // Start is called before the first frame update
-    void Start()
+    void Update ()
     {
-        //StartCoroutine(StartPhrases());
-        ShowFalas(" ",0f,false);
-        catImage.sprite = spriteArray[0]; 
+        time += Time.deltaTime;
+ 
+        if (time >= interpolationPeriod) 
+        {
+            time = time - interpolationPeriod;
+            //StartCoroutine(StartPhrases());
+            ShowFalas(GetRandomWord(),0f,false);
+            catImage.sprite = spriteArray[0]; 
+ 
+         // execute block of code here
+        }
+       
     }
     void ShowFalas(string message, float duration, bool stayForever)
     {
@@ -111,7 +123,7 @@ public class AICat : MonoBehaviour
 
         // Turn on the popup gameobject FalaAI
         falasGato.SetActive(true);
-        ShowFalas(GetRandomWord(), 0f, true);
+        //ShowFalas(GetRandomWord(), 0f, true);
         
 
         // First we lerp the scale from 0 to 1
