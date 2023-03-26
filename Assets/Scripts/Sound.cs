@@ -1,21 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
-[System.Serializable]
-public class Sound
+public class Sound : MonoBehaviour
 {
-    public enum AudioTypes { soundFx, music }
-    public AudioTypes audioType;
+    private Music music;
+    public Button musicToggleButton;
+    public Sprite musicOnSprite;
+    public Sprite musicOffSprite;
 
-    [HideInInspector] public AudioSource source;
-    public string clipName;
-    public AudioClip audioClip;
-    public bool isLoop;
-    public bool playOnAwake;
-    public bool mute;
+    void Start ()
+    {
+        music = GameObject.FindObjectOfType<Music>();
+        UpdateIcon();
+    }
 
-    [Range(0, 1)] public float volume = 1f;
+    void Update ()
+    {
 
+    }
+
+    public void PauseMusic ()
+    {
+        music.ToggleSound();
+        UpdateIcon();
+    }
+
+    void UpdateIcon()
+    {
+        if (PlayerPrefs.GetInt("Muted", 0) == 0)
+        {
+            AudioListener.volume = 1;
+            musicToggleButton.GetComponent<Image>().sprite = musicOnSprite;
+        }
+        else
+        {
+            AudioListener.volume = 0;
+            musicToggleButton.GetComponent<Image>().sprite = musicOffSprite;
+        }
+    }
 }
