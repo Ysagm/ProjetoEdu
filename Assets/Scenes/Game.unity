@@ -1735,8 +1735,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 621.2187, y: 621.2187}
+  m_AnchoredPosition: {x: 586.031, y: 0}
+  m_SizeDelta: {x: 1793.2808, y: 621.2187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250926299
 MonoBehaviour:
@@ -1751,14 +1751,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.7103615, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4fbe9eea2116e9a48b6684aa67d4d036, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2182,6 +2182,7 @@ GameObject:
   - component: {fileID: 335752114}
   - component: {fileID: 335752117}
   - component: {fileID: 335752116}
+  - component: {fileID: 335752118}
   - component: {fileID: 335752115}
   m_Layer: 5
   m_Name: NextTutorial
@@ -2208,7 +2209,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -26.29248}
+  m_AnchoredPosition: {x: 0, y: -571}
   m_SizeDelta: {x: 447.6853, y: 136.526}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &335752115
@@ -2254,7 +2255,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 335752116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 335752118}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: NewImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &335752116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2293,6 +2306,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335752113}
   m_CullTransparentMesh: 1
+--- !u!114 &335752118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335752113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bd0e83701208546aa62d94a66e19a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imgOriginal: {fileID: 250926299}
+  imgNext: {fileID: 21300000, guid: 4ba2fccfb53058d429932746fc779cb8, type: 3}
 --- !u!114 &342623790 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3140736916170598352, guid: 87b52676c8fb5e4409b2886d822985f3, type: 3}
@@ -5132,7 +5159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &726190201
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5168,7 +5195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2bd0e83701208546aa62d94a66e19a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorial: {fileID: 726190200}
+  imgOriginal: {fileID: 0}
+  imgNext: {fileID: 0}
 --- !u!114 &726190203
 MonoBehaviour:
   m_ObjectHideFlags: 0
