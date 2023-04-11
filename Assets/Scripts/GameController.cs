@@ -56,15 +56,37 @@ public class GameController : MonoBehaviour
 
     // List with words that can be chosen as correct words
     private List<string> guessingWords = new List<string>();
-
+    private int savedVariable;
     // Start is called before the first frame update
     void Start()
     {
-        // Populate the dictionary
-        AddWordsToList("Assets/Resources/dictionaryPT.js", dictionary);
+         // get the value stored in PlayerPrefs and assign it to the savedVariable variable
+        if (PlayerPrefs.HasKey("dropdownID"))
+        {
+            savedVariable = PlayerPrefs.GetInt("dropdownID");
+        }
+        else
+        {
+            // if the key "dropdownID" doesn't exist in PlayerPrefs, set the default value to 0
+            savedVariable = 0;
+        }
 
-        // Populate the guessing words
-        AddWordsToList("Assets/Resources/wordlist.js", guessingWords);
+        // populate the dictionaries based on the selected language
+        if (savedVariable == 0)
+        {
+            // Populate the dictionary
+            AddWordsToList("Assets/Resources/dictionaryPT.js", dictionary);
+
+            // Populate the guessing words
+            AddWordsToList("Assets/Resources/wordlist.js", guessingWords);
+        }
+        else if (savedVariable == 1)
+        {
+            AddWordsToList("Assets/Resources/dictionary.js", dictionary);
+
+            // Populate the guessing words
+            AddWordsToList("Assets/Resources/wordlistEn.js", guessingWords);
+        }
 
         // Choose a random correct word
         correctWord = GetRandomWord();

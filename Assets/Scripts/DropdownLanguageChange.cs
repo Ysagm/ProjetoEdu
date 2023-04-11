@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DropdownLanguageChange : MonoBehaviour
 {
-    public Dropdown dropdown; // add this line to define the Dropdown component
+    private Dropdown dropdown; // add this line to define the Dropdown component
     void Start()
     {
         dropdown = GetComponent<Dropdown>();
