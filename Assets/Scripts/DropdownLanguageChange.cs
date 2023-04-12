@@ -6,15 +6,15 @@ using TMPro;
 
 public class DropdownLanguageChange : MonoBehaviour
 {
-    private Dropdown dropdown; // add this line to define the Dropdown component
+    //private Dropdown dropdown; // add this line to define the Dropdown component
     void Start()
     {
-        dropdown = GetComponent<Dropdown>();
+        //dropdown = GetComponent<Dropdown>();
 
         if (PlayerPrefs.HasKey("dropdownID"))
         {
             int dropdownID = PlayerPrefs.GetInt("dropdownID");
-            dropdown.value = dropdownID;
+            //dropdown.value = dropdownID;
         }
     }
 
