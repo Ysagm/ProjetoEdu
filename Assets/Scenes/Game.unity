@@ -1735,8 +1735,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 586.031, y: 0}
-  m_SizeDelta: {x: 1793.2808, y: 621.2187}
+  m_AnchoredPosition: {x: 8.0537, y: 0}
+  m_SizeDelta: {x: 621.2187, y: 621.2187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250926299
 MonoBehaviour:
@@ -2210,7 +2210,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -571}
-  m_SizeDelta: {x: 447.6853, y: 136.526}
+  m_SizeDelta: {x: 400, y: 219}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &335752115
 MonoBehaviour:
@@ -2288,8 +2288,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f5766ecae2f62744da75bdecf3df7d38, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2319,7 +2319,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imgOriginal: {fileID: 250926299}
-  imgNext: {fileID: 21300000, guid: 4ba2fccfb53058d429932746fc779cb8, type: 3}
+  tutorial: {fileID: 726190200}
+  imgNext:
+  - {fileID: 21300000, guid: d3457dddda5e74c429c14dedfac5d1cb, type: 3}
+  - {fileID: 21300000, guid: fb9b648f0b3f5974caf9b10b545a3806, type: 3}
+  - {fileID: 21300000, guid: 05ed7ae3863ae814a832adb1966f7cb9, type: 3}
 --- !u!114 &342623790 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3140736916170598352, guid: 87b52676c8fb5e4409b2886d822985f3, type: 3}
@@ -3763,7 +3767,6 @@ MonoBehaviour:
   - {r: 1, g: 0.7921569, b: 0.69411767, a: 0}
   - {r: 0.49803922, g: 0.84705883, b: 0.74509805, a: 0}
   - {r: 0.9529412, g: 0.5529412, b: 0.40784314, a: 0}
-  - {r: 0.6313726, g: 0.9882353, b: 0.8745098, a: 0}
   - {r: 0.93333334, g: 0.42352942, b: 0.3019608, a: 0}
   - {r: 0.96862745, g: 0.43529412, b: 0.5568628, a: 0}
   - {r: 0.5411765, g: 0.69411767, b: 0.49019608, a: 0}
@@ -5152,7 +5155,6 @@ GameObject:
   - component: {fileID: 726190201}
   - component: {fileID: 726190204}
   - component: {fileID: 726190203}
-  - component: {fileID: 726190202}
   m_Layer: 5
   m_Name: TutorialPanel
   m_TagString: Untagged
@@ -5183,20 +5185,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &726190202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726190200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2bd0e83701208546aa62d94a66e19a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imgOriginal: {fileID: 0}
-  imgNext: {fileID: 0}
 --- !u!114 &726190203
 MonoBehaviour:
   m_ObjectHideFlags: 0
