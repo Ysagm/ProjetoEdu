@@ -4075,6 +4075,7 @@ GameObject:
   - component: {fileID: 1902014751}
   - component: {fileID: 1902014750}
   - component: {fileID: 1902014752}
+  - component: {fileID: 1902014753}
   m_Layer: 0
   m_Name: IAP Listener
   m_TagString: Untagged
@@ -4129,11 +4130,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fe04bdf95ae0844b9fbbdcbb630e7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _androidInterstitialId: Interstitial_Android
+  _iOsInterstitialId: Interstitial_iOS
   _androidGameId: 5246633
   _iOSGameId: 5246632
   _testMode: 1
-  _androidInterstitialId: Interstitial_Android
-  _iOsInterstitialId: Interstitial_iOS
+--- !u!114 &1902014753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902014749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef9cc4a29e4a6e49944bce1977885b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2048360289
 GameObject:
   m_ObjectHideFlags: 0
