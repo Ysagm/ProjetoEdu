@@ -62,8 +62,8 @@ crashlytics-build.properties
 
 *.csproj
 *.vsconfig
-WordleGuide/obj/
-WordleGuide/PC/
-WordleGuide/Logs/
-WordleGuide/UserSettings/
-WordleGuide/Temp/
+TeemiesWords/obj/
+TeemiesWords/PC/
+TeemiesWords/Logs/
+TeemiesWords/UserSettings/
+TeemiesWords/Temp/
