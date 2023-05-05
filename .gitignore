@@ -30,8 +30,8 @@ ExportedObj/
 .consulo/
 *.csproj
 *.unityproj
-WordleGuide/Library/
-WordleGuide/.vs/
+TeemiesWords/Library/
+TeemiesWords/.vs/
 *.sln
 *.suo
 *.tmp
