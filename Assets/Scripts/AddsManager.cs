@@ -8,7 +8,9 @@ public class AddsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnit
     [SerializeField] string _androidInterstitialId = "Interstitial_Android";
     [SerializeField] string _iOsInterstitialId = "Interstitial_iOS";
     string _interstitialId;
-
+    [SerializeField] string _androidRewardedId = "Rewarded_Android";
+    [SerializeField] string _iOsRewardedId = "Rewarded_iOS";
+    string _rewardedId;
     [SerializeField] string _androidGameId;
     [SerializeField] string _iOSGameId;
     [SerializeField] bool _testMode = true;
@@ -19,9 +21,14 @@ public class AddsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnit
 #if UNITY_IOS
         _gameId = _iOSGameId;
         _interstitialId = _iOsInterstitialId;
+        _rewardedId = _iOsRewardedId;
 #elif UNITY_ANDROID
         _gameId = _androidGameId;
         _interstitialId = _androidInterstitialId;
+        _rewardedId = _androidRewardedId;
+#else
+    Debug.Log("Adds not available on this platform");
+    return;
 #endif
         if (!Advertisement.isInitialized && Advertisement.isSupported)
         {
@@ -46,6 +53,10 @@ public class AddsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnit
         ShowAd(_interstitialId);
     }
     
+    public void ShowRewarded()
+    {
+        ShowAd(_rewardedId);
+    }
     //-----------------------------------
     // Load content to the Ad Unit:
     void LoadAd(string adUnitId)
