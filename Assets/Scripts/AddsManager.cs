@@ -15,7 +15,7 @@ public class AddsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnit
     [SerializeField] string _iOSGameId;
     [SerializeField] bool _testMode = true;
     private string _gameId;
-
+    public GameController gameController;
     void Awake()
     {
 #if UNITY_IOS
@@ -92,11 +92,13 @@ public class AddsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnit
         // Optionally execute code if the Ad Unit fails to show, such as loading another ad.
     }
 
+
     public void OnUnityAdsShowStart(string _adUnitId) { }
     public void OnUnityAdsShowClick(string _adUnitId) { }
 
     public void OnUnityAdsShowComplete(string _adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
         LoadAd(_adUnitId);
+        gameController.rewardLetter();
     }
 }

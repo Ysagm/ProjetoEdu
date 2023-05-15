@@ -5,12 +5,14 @@ using System.IO;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class GameController : MonoBehaviour
 {
     // Our different colors that we will use
     private Color colorCorrect = new Color(0.6f, 0.8509804f, 0.5490196f);
     private Color colorIncorrectPlace = new Color(1f, 0.8235294f, 0.4f);
     private Color colorUnused = new Color(0.572549f, 0.572549f, 0.572549f);
+    private Color colorReward = new Color(0.596078f, 0.901960f, 0.992156f);
 
     // List of starting x positions for the wordboxes
     private float[] wordRowStartIngXPositions = new float[5];
@@ -57,6 +59,9 @@ public class GameController : MonoBehaviour
     // List with words that can be chosen as correct words
     private List<string> guessingWords = new List<string>();
     private int savedVariable;
+    //Armazenar palavras corretas
+    public char[] correctLetters = new char[5];
+
     // Start is called before the first frame update
     void Start()
     {
@@ -279,6 +284,7 @@ public class GameController : MonoBehaviour
             if (playerGuessArray[i] == correctWordArray[i])
             {
                 // Correct place
+                armazenarAcertos(playerGuessArray[i]);
                 playerGuessArray[i] = '0';
                 correctWordArray[i] = '0';
             }
@@ -299,6 +305,7 @@ public class GameController : MonoBehaviour
             if (tempCorrectWord.Contains(playerGuessArray[i].ToString()) && playerGuessArray[i] != '0')
             {
                 char playerCharacter = playerGuessArray[i];
+                armazenarAcertos(playerGuessArray[i]);
                 playerGuessArray[i] = '1';
                 tempPlayerGuess = "";
                 for (int j = 0; j < 5; j++)
@@ -446,7 +453,44 @@ public class GameController : MonoBehaviour
             popupButton.gameObject.SetActive(true);
         }
     }
-
+    public void armazenarAcertos(char letter)
+    {
+        bool adicionou = false;
+        for (int i = 0; i < correctLetters.Length; i++)
+        {
+            if (correctLetters[i] == 0 && !adicionou)
+            {
+                correctLetters[i] = letter;
+                adicionou = true;
+            }
+        }
+    }
+    public void rewardLetter()
+    {
+        bool tem = false;
+        bool pintou = false;
+        for (int u = 0; u < correctLetters.Length; u++)
+        {
+            Debug.Log(correctLetters[u]);
+        }
+        foreach (char i in correctWord)
+        {
+            tem = false;
+            for (int j = 0; j < correctLetters.Length; j++)
+            {
+                if (i == correctLetters[j])
+                {
+                    tem = true;
+                }
+            }
+            if (!tem && !pintou)
+            {
+                Image keyboardImage = playerController.GetKeyboardImage(i.ToString());
+                keyboardImage.color = colorReward;
+                pintou = true;
+            }
+        }
+    }
     void ShowPopup(string message, float duration, bool stayForever)
     {
         // If a popup routine exists, we should stop that first,
