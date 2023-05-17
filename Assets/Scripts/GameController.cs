@@ -487,6 +487,7 @@ public class GameController : MonoBehaviour
             {
                 Image keyboardImage = playerController.GetKeyboardImage(i.ToString());
                 keyboardImage.color = colorReward;
+                
                 pintou = true;
             }
         }
