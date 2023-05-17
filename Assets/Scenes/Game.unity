@@ -1277,15 +1277,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5793699, y: 0.5793699, z: 0.5793699}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 554474085}
+  m_Children: []
   m_Father: {fileID: 2058237562}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 260}
-  m_SizeDelta: {x: 391.998, y: 198.828}
+  m_AnchoredPosition: {x: 0, y: 244.67606}
+  m_SizeDelta: {x: 391.6016, y: 231.6016}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &168002819
 MonoBehaviour:
@@ -1363,7 +1362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cd70c84ab9c989445990a70b28f4df54, type: 3}
+  m_Sprite: {fileID: 2104837112, guid: 8dd1a750fb05a004f8f4680c604f7e6f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1573,9 +1572,11 @@ MonoBehaviour:
   falas: {fileID: 1381044305}
   falasGato: {fileID: 321238541}
   phrases:
-  - Frase 1
-  - Frase 2
-  - Frase 3
+  - "Vamos! Voc\xEA consegue!"
+  - Queria tanto um peixinho...
+  - "\xC9 poss\xEDvel trocar para libras!"
+  - "Oh c\xE9us, odeio segundas..."
+  - " E eu achando que voc\xEA era bom..."
   catImage: {fileID: 227725552}
   spriteArray:
   - {fileID: 21300000, guid: 1bbdfc20a5add3c4c9d325a969751667, type: 3}
@@ -2039,7 +2040,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 172, y: 280}
-  m_SizeDelta: {x: 298.8827, y: 157.78369}
+  m_SizeDelta: {x: 779.937, y: 157.7837}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &321238543
 MonoBehaviour:
@@ -4141,86 +4142,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7555406116632868499, guid: 87b52676c8fb5e4409b2886d822985f3, type: 3}
   m_PrefabInstance: {fileID: 1354381711202055283}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &554474084
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 554474085}
-  - component: {fileID: 554474087}
-  - component: {fileID: 554474086}
-  m_Layer: 5
-  m_Name: 'Text '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &554474085
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554474084}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 168002818}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &554474086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554474084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 50
-    m_Alignment: 4
-    m_AlignByGeometry: 1
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: MUDAR
---- !u!222 &554474087
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554474084}
-  m_CullTransparentMesh: 1
 --- !u!1 &582107652
 GameObject:
   m_ObjectHideFlags: 0
