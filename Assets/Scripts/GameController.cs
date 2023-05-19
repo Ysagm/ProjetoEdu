@@ -80,17 +80,17 @@ public class GameController : MonoBehaviour
         if (savedVariable == 0)
         {
             // Populate the dictionary
-            AddWordsToList("Assets/Resources/dictionaryPT.js", dictionary);
+            AddWordsToList("dictionaryPT", dictionary);
 
             // Populate the guessing words
-            AddWordsToList("Assets/Resources/wordlist.js", guessingWords);
+            AddWordsToList("wordlist", guessingWords);
         }
         else if (savedVariable == 1)
         {
-            AddWordsToList("Assets/Resources/dictionary.js", dictionary);
+            AddWordsToList("dictionary", dictionary);
 
             // Populate the guessing words
-            AddWordsToList("Assets/Resources/wordlistEn.js", guessingWords);
+            AddWordsToList("wordlistEn", guessingWords);
         }
 
         // Choose a random correct word
@@ -121,12 +121,17 @@ public class GameController : MonoBehaviour
 
     void AddWordsToList(string path, List<string> listOfWords)
     {
+        //só pode carregar arquivos .txt, não pode colocar o .txt no nome para o Resources.Load
+        TextAsset mytxtData = (TextAsset)Resources.Load(path);
+        string text = mytxtData.text;
+
+/*
         // Read the text from the file
         StreamReader reader = new StreamReader(path);
         string text = reader.ReadToEnd();
-
+*/
         // Output the text to the console
-        Debug.Log(text);
+        //Debug.Log(text);
 
         // Separate them for each ',' character
         char[] separator = { ',' };
@@ -139,7 +144,7 @@ public class GameController : MonoBehaviour
         }
 
         // Close the reader
-        reader.Close();
+       // reader.Close();
     }
 
     string GetRandomWord()

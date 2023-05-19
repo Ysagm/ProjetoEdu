@@ -1585,6 +1585,7 @@ GameObject:
   - component: {fileID: 603600796}
   - component: {fileID: 603600795}
   - component: {fileID: 603600794}
+  - component: {fileID: 603600798}
   m_Layer: 5
   m_Name: NoAds
   m_TagString: Untagged
@@ -1707,7 +1708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: 
+  productId: removeads
   buttonType: 0
   consumePurchase: 1
   onPurchaseComplete:
@@ -1719,6 +1720,18 @@ MonoBehaviour:
   titleText: {fileID: 0}
   descriptionText: {fileID: 0}
   priceText: {fileID: 0}
+--- !u!114 &603600798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603600792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ff8e04ee0270b458d3a6a27111ecbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &615174148
 GameObject:
   m_ObjectHideFlags: 0

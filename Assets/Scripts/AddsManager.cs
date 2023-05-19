@@ -50,7 +50,10 @@ public class AddsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnit
     //-----------------------------------
     public void ShowInterstitial()
     {
-        ShowAd(_interstitialId);
+        if(PlayerPrefs.GetInt("removeads") == 1)
+        {
+            ShowAd(_interstitialId);
+        }
     }
     
     public void ShowRewarded()
