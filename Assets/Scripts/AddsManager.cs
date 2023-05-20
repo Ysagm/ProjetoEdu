@@ -13,7 +13,7 @@ public class AddsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnit
     string _rewardedId;
     [SerializeField] string _androidGameId;
     [SerializeField] string _iOSGameId;
-    [SerializeField] bool _testMode = true;
+    [SerializeField] bool _testMode = false;
     private string _gameId;
     public GameController gameController;
     void Awake()
