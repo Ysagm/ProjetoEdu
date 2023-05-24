@@ -1729,7 +1729,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 603600792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9ff8e04ee0270b458d3a6a27111ecbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ef9cc4a29e4a6e49944bce1977885b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &615174148
@@ -4089,7 +4089,7 @@ MonoBehaviour:
   _iOsRewardedId: Rewarded_iOS
   _androidGameId: 5246633
   _iOSGameId: 5246632
-  _testMode: 1
+  _testMode: 0
   gameController: {fileID: 0}
 --- !u!114 &1902014753
 MonoBehaviour:
