@@ -40,7 +40,7 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 620dfe890701d9d4c9e2363605a32615, type: 3}
+  - logo: {fileID: 21300000, guid: 0e61595cb19e4dd40949f1c67faba8af, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 620dfe890701d9d4c9e2363605a32615, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -744,7 +744,7 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 620dfe890701d9d4c9e2363605a32615, type: 3}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 07e1e0833b5aea24497d5ab26c889172, type: 3}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   blurSplashScreenBackground: 1
   spritePackerPolicy: 
@@ -776,7 +776,7 @@ PlayerSettings:
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
   enableRoslynAnalyzers: 1
-  selectedPlatform: 2
+  selectedPlatform: 0
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1

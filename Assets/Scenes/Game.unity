@@ -1572,11 +1572,11 @@ MonoBehaviour:
   falas: {fileID: 1381044305}
   falasGato: {fileID: 321238541}
   phrases:
-  - "Vamos! Voc\xEA consegue!"
-  - Queria tanto um peixinho...
-  - "\xC9 poss\xEDvel trocar para libras!"
-  - "Oh c\xE9us, odeio segundas..."
-  - " E eu achando que voc\xEA era bom..."
+  - "Voc\xEA consegue!"
+  - Hmm, um peixinho...
+  - Tem libras no jogo!
+  - Odeio segundas...
+  - "Achei que voc\xEA era bom..."
   catImage: {fileID: 227725552}
   spriteArray:
   - {fileID: 21300000, guid: 1bbdfc20a5add3c4c9d325a969751667, type: 3}
@@ -2040,7 +2040,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 172, y: 280}
-  m_SizeDelta: {x: 779.937, y: 157.7837}
+  m_SizeDelta: {x: 580, y: 150}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &321238543
 MonoBehaviour:
@@ -3975,8 +3975,8 @@ RectTransform:
   m_Children:
   - {fileID: 1715369239}
   - {fileID: 176994730}
-  - {fileID: 726190201}
   - {fileID: 2101694817}
+  - {fileID: 726190201}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5099,7 +5099,7 @@ RectTransform:
   - {fileID: 250926298}
   - {fileID: 335752114}
   m_Father: {fileID: 525328348}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -16896,7 +16896,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 525328348}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -16979,7 +16979,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 24ae507be3da14741b40800045f263a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0a00e83e6a031d47bba44db2ab6d774, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
