@@ -65,6 +65,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AddsManager.Instance.ShowInterstitial();
          // get the value stored in PlayerPrefs and assign it to the savedVariable variable
         if (PlayerPrefs.HasKey("dropdownID"))
         {
@@ -98,6 +99,10 @@ public class GameController : MonoBehaviour
 
         // Save the x-positions of the wordboxes to a list, so we can reuse it for resetting later
         SetRowStartPositions();
+    }
+    public void ShowRewarded()
+    {
+        AddsManager.Instance.ShowRewarded();
     }
 
     void SetRowStartPositions()

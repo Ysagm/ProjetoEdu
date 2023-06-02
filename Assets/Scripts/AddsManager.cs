@@ -16,8 +16,34 @@ public class AddsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnit
     [SerializeField] bool _testMode = false;
     private string _gameId;
     public GameController gameController;
+    private static AddsManager _Instance;
+    public static AddsManager Instance
+    {
+        get
+        {
+            if (_Instance == null)
+            {
+                _Instance = FindObjectOfType<AddsManager>();
+                if (_Instance == null)
+                {
+                    _Instance = Instantiate<GameObject>(Resources.Load<GameObject>("IAP Listener")).GetComponent<AddsManager>();
+                    DontDestroyOnLoad(_Instance);
+                }
+
+                _Instance.name = "IAP Listener";
+            }
+            return _Instance;
+        }
+    }
     void Awake()
     {
+        if (_Instance != null && _Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _Instance = this;
 #if UNITY_IOS
         _gameId = _iOSGameId;
         _interstitialId = _iOsInterstitialId;
@@ -40,6 +66,7 @@ public class AddsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnit
     {
         Debug.Log("Unity Ads initialization complete.");
         LoadAd(_interstitialId);
+        LoadAd(_rewardedId);    
     }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
@@ -50,7 +77,7 @@ public class AddsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnit
     //-----------------------------------
     public void ShowInterstitial()
     {
-        if(PlayerPrefs.GetInt("removeads") == 1)
+        if(PlayerPrefs.GetInt("removeads") == 0)
         {
             ShowAd(_interstitialId);
         }
@@ -102,6 +129,10 @@ public class AddsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnit
     public void OnUnityAdsShowComplete(string _adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
         LoadAd(_adUnitId);
-        gameController.rewardLetter();
+        gameController = FindObjectOfType<GameController>();
+        if (gameController != null)
+        {
+            gameController.rewardLetter();
+        }
     }
 }
